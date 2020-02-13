@@ -26,14 +26,14 @@ def getData(sheetObj):
     assetData = []
     print('Opening workbook...')
     print('... grabbing data...')
-    for row in range(2, preSheet.max_row + 1):
-        PCN = preSheet.cell(row=row, column=2).value
+    for row in range(2, sheetObj.max_row + 1):
+        PCN = sheetObj.cell(row=row, column=2).value
         if PCN is None:
             # ignore those rows which have an empty PCN (assuming that it must be present)
             continue
-        deviceType = preSheet.cell(row=row, column=3).value
-        deviceSN = preSheet.cell(row=row, column=1).value
-        userID = preSheet.cell(row=row, column=6).value
+        deviceType = sheetObj.cell(row=row, column=3).value
+        deviceSN = sheetObj.cell(row=row, column=1).value
+        userID = sheetObj.cell(row=row, column=6).value
 
         assetData.append([PCN, deviceType, deviceSN, userID])
     return assetData
