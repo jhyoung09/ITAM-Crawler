@@ -30,10 +30,10 @@ def copyPre():
     print('Opening workbook...')
     print('... grabbing data...')
     for row in range(2,preSheet.max_row + 1):
-        PCN = preSheet['B' + str(row)].value
-        deviceType = preSheet['C' + str(row)].value
-        deviceSN = preSheet['A' + str(row)].value
-        userID = preSheet['F' + str(row)].value
+        PCN = preSheet.cell(row=row, column=2).value
+        deviceType = preSheet.cell(row=row, column=3)
+        deviceSN = preSheet.cell(row=row, column=1)
+        userID = preSheet.cell(row=row, column=6)
 
         preAssetData.setdefault(PCN)
         preAssetData[PCN].setdefault(deviceType)
