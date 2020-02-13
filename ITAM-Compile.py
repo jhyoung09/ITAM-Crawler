@@ -19,35 +19,38 @@ import openpyxl, pprint
 preWB = openpyxl.load_workbook('AssetInventory-PRE.xlsx')
 preSheet = preWB['Computers']
 
-#postWB = openpyxl.load_workbook('AssetInventory-POST.xlsx')
-#postSheet = postWB['Computers']
+postWB = openpyxl.load_workbook('AssetInventory-POST.xlsx')
+postSheet = postWB['Computers']
 
-
-preAssetData = {}
-
-#   copy the data from the pre into the master
-def copyPre():
+def getData(sheetObj):
+    assetData = []
     print('Opening workbook...')
     print('... grabbing data...')
-    for row in range(2,preSheet.max_row + 1):
+    for row in range(2, preSheet.max_row + 1):
         PCN = preSheet.cell(row=row, column=2).value
-        deviceType = preSheet.cell(row=row, column=3)
-        deviceSN = preSheet.cell(row=row, column=1)
-        userID = preSheet.cell(row=row, column=6)
+        if PCN is None:
+            # ignore those rows which have an empty PCN (assuming that it must be present)
+            continue
+        deviceType = preSheet.cell(row=row, column=3).value
+        deviceSN = preSheet.cell(row=row, column=1).value
+        userID = preSheet.cell(row=row, column=6).value
 
-        preAssetData.append([PCN, deviceType, deviceSN, userID])
-    return preAssetData
+        assetData.append([PCN, deviceType, deviceSN, userID])
+    return assetData
 
-def writePre():
+def writePre(sheet_data):
     print('...writing data...')
     resultFile = open('crawl.py', 'w')
-    resultFile.write('allData = ' + pprint.pformat(preAssetData))
-    resultFile.close
+    resultFile.write('allData = ' + pprint.pformat(sheet_data))
+    resultFile.close()
     print('...done.')
 
 
 def main():
-    copyPre()
-    writePre()
+    preAssetData = getData(preSheet)
+    postAssetData = getData(postSheet)
+    print(preAssetData)
+    print(postAssetData)
+    writePre(preAssetData)
 
 main()
