@@ -35,10 +35,7 @@ def copyPre():
         deviceSN = preSheet.cell(row=row, column=1)
         userID = preSheet.cell(row=row, column=6)
 
-        preAssetData.setdefault(PCN)
-        preAssetData[PCN].setdefault(deviceType)
-
-        preAssetData[PCN][deviceType][deviceSN][userID] += 1
+        preAssetData.append([PCN, deviceType, deviceSN, userID])
     return preAssetData
 
 def writePre():
