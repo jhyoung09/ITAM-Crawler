@@ -31,6 +31,10 @@ def getData(sheetObj):
         if PCN is None:
             # ignore those rows which have an empty PCN (assuming that it must be present)
             continue
+
+        if PCN == "n/a":
+            # special case to deal with integer comparison where PCN was set to n/a
+            PCN = 0
         deviceType = sheetObj.cell(row=row, column=3).value
         deviceSN = sheetObj.cell(row=row, column=1).value
         userID = sheetObj.cell(row=row, column=6).value
@@ -45,12 +49,37 @@ def writePre(sheet_data):
     resultFile.close()
     print('...done.')
 
+def gather_data(preData, postData):
+    preData.sort()
+    postDataSort = sorted(postData)
+    finalData = []
+    preIndex = 0
+    while preIndex < len(preData):
+        foundMatch = False
+        for postItem in postDataSort:
+            if preData[preIndex][0] == postItem[0]:
+                finalData.append(preData[preIndex] + postItem)
+                foundMatch = True
+                postDataSort.remove(postItem)
+
+        if not foundMatch:
+            finalData.append(preData[preIndex] + ["", "", "", ""])
+        preIndex += 1
+
+    for postItem in postDataSort:
+        finalData.append(["", "", "", ""] + postItem)
+
+    print("This is data that has been correlated together if possible")
+    for item in finalData:
+        print(item)
+
 
 def main():
     preAssetData = getData(preSheet)
     postAssetData = getData(postSheet)
-    print(preAssetData)
-    print(postAssetData)
+    gather_data(preAssetData, postAssetData)
+    #print(preAssetData)
+    #print(postAssetData)
     writePre(preAssetData)
 
 main()
