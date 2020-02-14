@@ -91,6 +91,7 @@ def main():
 
     #print(preAssetData)
     #print(postAssetData)
+    print('...determining how much data is being parsed...')
     print(len(finalAssetData))
     write_data(finalAssetData)
     print('...DONE!!')
