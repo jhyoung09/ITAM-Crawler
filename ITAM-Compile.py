@@ -45,17 +45,12 @@ def getData(sheetObj):
         assetData.append([PCN, deviceType, deviceSN, userID])
     return assetData
 
-def write_data(preData, postData):
-    print('writing pre data...')
-    for preRowNum in range(3,itamSheet.max_row):   #   skipping the first 2 rows because of headers
-        for preColNum in range(1,4):
-            itamSheet.cell(row=preRowNum, column=preColNum).value = preData
-    
-    print('writing post data...')
+def write_data(finalData):
+    print('writing data...')
 
-    for postRowNum in range(3,itamSheet.max_row):
-        for postColNum in range(6,10):
-            itamSheet.cell(row=postRowNum, column=postColNum).value = postData
+    for rowNum in range(3,itamSheet.max_row):   #   skipping the first 2 rows because of headers
+        for colNum in range(1,10):
+            itamSheet.cell(row=rowNum, column=colNum).value = finalData
     
     print('data written in sheet... saving workbook...')
     
@@ -91,10 +86,11 @@ def gather_data(preData, postData):
 def main():
     preAssetData = getData(preSheet)
     postAssetData = getData(postSheet)
+    finalAssetData = #  can't figure out where to corolate this to
     gather_data(preAssetData, postAssetData)
     #print(preAssetData)
     #print(postAssetData)
-    write_data(preAssetData, postAssetData)
+    write_data(finalAssetData)
     print('...DONE!!')
 
 main()
