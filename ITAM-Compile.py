@@ -22,7 +22,7 @@ preSheet = preWB['Computers']
 postWB = openpyxl.load_workbook('AssetInventory-POST.xlsx')
 postSheet = postWB['Computers']
 
-itamReport = openpyxl.load_workbook('pythonCrawl_Master.xlsx')
+itamReport = openpyxl.load_workbook('base.xlsx')
 itamSheet = itamReport['Asset to Location Tracking All']
 
 def getData(sheetObj):
@@ -48,9 +48,9 @@ def getData(sheetObj):
 def write_data(finalData):
     print('writing data...')
 
-    for rowNum in range(3,itamSheet.max_row):   #   skipping the first 2 rows because of headers
-        for colNum in range(1,10):
-            itamSheet.cell(row=rowNum, column=colNum).value = finalData
+    for rowNum in range(3,len(finalData) + 3):   #   skipping the first 2 rows because of headers
+        for colNum in range(len(finalData[rowNum - 3])):
+            itamSheet.cell(row=rowNum, column=colNum + 1).value = finalData[rowNum - 3][colNum]
     
     print('data written in sheet... saving workbook...')
     
@@ -67,29 +67,31 @@ def gather_data(preData, postData):
         foundMatch = False
         for postItem in postDataSort:
             if preData[preIndex][0] == postItem[0]:
-                finalData.append(preData[preIndex] + postItem)
+                finalData.append(preData[preIndex] +[""] + postItem)
                 foundMatch = True
                 postDataSort.remove(postItem)
 
         if not foundMatch:
-            finalData.append(preData[preIndex] + ["", "", "", ""])
+            finalData.append(preData[preIndex] + ["", "", "", "", ""])
         preIndex += 1
 
     for postItem in postDataSort:
-        finalData.append(["", "", "", ""] + postItem)
+        finalData.append(["", "", "", "", ""] + postItem)
 
-    print("This is data that has been correlated together if possible")
-    for item in finalData:
-        print(item)
+    #print("This is data that has been correlated together if possible")
+    #for item in finalData:
+    #    print(item)
+    return finalData
 
 
 def main():
     preAssetData = getData(preSheet)
     postAssetData = getData(postSheet)
-    finalAssetData = #  can't figure out where to corolate this to
-    gather_data(preAssetData, postAssetData)
+    finalAssetData = gather_data(preAssetData, postAssetData)
+
     #print(preAssetData)
     #print(postAssetData)
+    print(len(finalAssetData))
     write_data(finalAssetData)
     print('...DONE!!')
 
