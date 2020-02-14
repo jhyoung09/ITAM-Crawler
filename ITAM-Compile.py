@@ -13,7 +13,7 @@
 
 
 #   ipmorts
-import openpyxl, pprint
+import openpyxl
 
 #   global variables
 preWB = openpyxl.load_workbook('AssetInventory-PRE.xlsx')
@@ -21,6 +21,9 @@ preSheet = preWB['Computers']
 
 postWB = openpyxl.load_workbook('AssetInventory-POST.xlsx')
 postSheet = postWB['Computers']
+
+itamReport = openpyxl.load_workbook('pythonCrawl_Master.xlsx')
+itamSheet = itamReport['Asset to Location Tracking All']
 
 def getData(sheetObj):
     assetData = []
@@ -42,12 +45,23 @@ def getData(sheetObj):
         assetData.append([PCN, deviceType, deviceSN, userID])
     return assetData
 
-def writePre(sheet_data):
-    print('...writing data...')
-    resultFile = open('crawl.py', 'w')
-    resultFile.write('allData = ' + pprint.pformat(sheet_data))
-    resultFile.close()
-    print('...done.')
+def write_data(preData, postData):
+    print('writing pre data...')
+    for preRowNum in range(3,itamSheet.max_row):   #   skipping the first 2 rows because of headers
+        for preColNum in range(1,4):
+            itamSheet.cell(row=preRowNum, column=preColNum).value = preData
+    
+    print('writing post data...')
+
+    for postRowNum in range(3,itamSheet.max_row):
+        for postColNum in range(6,10):
+            itamSheet.cell(row=postRowNum, column=postColNum).value = postData
+    
+    print('data written in sheet... saving workbook...')
+    
+    itamReport.save('pythonCrawl_master.xlsx')
+    
+    print('workbook saved...')
 
 def gather_data(preData, postData):
     preData.sort()
@@ -80,6 +94,7 @@ def main():
     gather_data(preAssetData, postAssetData)
     #print(preAssetData)
     #print(postAssetData)
-    writePre(preAssetData)
+    write_data(preAssetData, postAssetData)
+    print('...DONE!!')
 
 main()
