@@ -9,7 +9,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/jhyoung09/ITAM-Crawler">
-    <img src="./logo.png" alt="Logo" width="80" height="80">
+    <img src="./aBeardedOwl.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">An Asset Data Compile Tool</h3>
@@ -38,10 +38,7 @@
 - [Table of Contents](#table-of-contents)
 - [About The Project](#about-the-project)
   - [Built With](#built-with)
-- [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
@@ -68,7 +65,7 @@ This has been built in Python 3.7.4 utilizing the below libraries.
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+<!--## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
@@ -80,8 +77,9 @@ This is an example of how to list things you need to use the software and how to
 ```sh
 npm install npm@latest -g
 ```
+-->
 
-### Installation
+<!-- ### Installation
 
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
@@ -96,16 +94,16 @@ npm install
 ```JS
 const API_KEY = 'ENTER YOUR API';
 ```
-
+-->
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+<!-- ## Usage
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
-
+-->
 
 
 <!-- ROADMAP -->
@@ -138,9 +136,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
+Hunter Young - hunter@youngs.us
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+<!-- Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name) -->
 
 
 
@@ -150,7 +148,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 * [Img Shields](https://shields.io)
 * [GitHub Pages](https://pages.github.com)
 * [r/learnpython](https://www.reddit.com/r/learnpython/)
-* blah blah blah....
+* [Roshan Lamichhane](https://github.com/roshanlam/ReadMeTemplate), for his awesome readme template
 
 
 
@@ -159,9 +157,9 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [forks-shield]: https://img.shields.io/github/forks/roshanlam/ReadMeTemplate?style=for-the-badge
-[forks-url]: https://github.com/roshanlam/ReadMeTemplate/network/members
+[forks-url]: https://github.com/jhyoung09/ITAM-Crawler/network/members
 [stars-shield]: https://img.shields.io/github/stars/roshanlam/ReadMeTemplate?style=for-the-badge
-[stars-url]: https://github.com/roshanlam/ReadMeTemplate/stargazers
+[stars-url]: https://github.com/jhyoung09/ITAM-Crawler/stargazers
 [issues-shield]: https://img.shields.io/github/issues/roshanlam/ReadMeTemplate?style=for-the-badge
 [issues-url]: https://github.com/jhyoung09/ITAM-Crawler/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
