@@ -50,8 +50,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 This project started out as a way to push myself to learn more python but also to automate a time consuming task that I do not have the time to do every week, but is a report required for my project.
 
 The use case is to compile asset data that field technicians are gathering while upgrading sites during our project. We have to compile all of this data and provide it to our IT Asset Management team and our Finance team so assets can be settled in the books. 
