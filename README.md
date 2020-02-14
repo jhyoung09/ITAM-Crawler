@@ -8,25 +8,25 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/roshanlam/ReadMeTemplate/">
+  <a href="https://github.com/jhyoung09/ITAM-Crawler">
     <img src="./logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Read Me Template</h3>
+  <h3 align="center">An Asset Data Compile Tool</h3>
+  <h4 align="center">ITAM-Crawler</h4>
 
   <p align="center">
-    A Read Me template for your projects!
     <br />
-    <a href="https://github.com/roshanlam/ReadMeTemplate/"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/jhyoung09/ITAM-Crawler"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/roshanlam/ReadMeTemplate/">View Demo</a>
+    <a href="https://github.com/jhyoung09/ITAM-Crawler">View Demo</a>
     ·
-    <a href="https://github.com/roshanlam/ReadMeTemplate/issues">Report Bug</a>
+    <a href="https://github.com/jhyoung09/ITAM-Crawler/issues">Report Bug</a>
     ·
-    <a href="https://github.com/roshanlam/ReadMeTemplate/issues">Request Feature</a>
+    <a href="https://github.com/jhyoung09/ITAM-Crawler/issues">Request Feature</a>
     ·
-    <a href="https://github.com/roshanlam/ReadMeTemplate/pulls">Send a Pull Request</a>
+    <a href="https://github.com/jhyoung09/ITAM-Crawler/pulls">Send a Pull Request</a>
   </p>
 </p>
 
@@ -61,9 +61,9 @@ The use case is to compile asset data that field technicians are gathering while
 
 
 ### Built With
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+This has been built in Python 3.7.4 utilizing the below libraries. 
 * [openyxl](https://openpyxl.readthedocs.io/en/stable/)
-* [python 3.7.4](https://www.python.org/)
+
 
 
 
@@ -111,7 +111,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/roshanlam/ReadMeTemplate/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/jhyoung09/ITAM-Crawler/issues) for a list of proposed features (and known issues).
 
 
 
@@ -129,8 +129,7 @@ Contributions are what make the open source community such an amazing place to b
 
 
 <!-- LICENSE -->
-## License
-Describe your License for your project. 
+## License 
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
@@ -164,6 +163,6 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 [stars-shield]: https://img.shields.io/github/stars/roshanlam/ReadMeTemplate?style=for-the-badge
 [stars-url]: https://github.com/roshanlam/ReadMeTemplate/stargazers
 [issues-shield]: https://img.shields.io/github/issues/roshanlam/ReadMeTemplate?style=for-the-badge
-[issues-url]: https://github.com/roshanlam/ReadMeTemplate/issues
+[issues-url]: https://github.com/jhyoung09/ITAM-Crawler/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/roshan-lamichhane
+[linkedin-url]: https://www.linkedin.com/in/jameshunteryoung/
