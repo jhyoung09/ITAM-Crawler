@@ -156,9 +156,9 @@ Hunter Young - hunter@youngs.us
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[forks-shield]: https://img.shields.io/github/forks/roshanlam/ReadMeTemplate?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/jhyoung09/ReadMeTemplate?style=flat-square
 [forks-url]: https://github.com/jhyoung09/ITAM-Crawler/network/members
-[stars-shield]: https://img.shields.io/github/stars/roshanlam/ReadMeTemplate?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/roshanlam/ReadMeTemplate?style=flat-square
 [stars-url]: https://github.com/jhyoung09/ITAM-Crawler/stargazers
 [issues-shield]: https://img.shields.io/github/issues/roshanlam/ReadMeTemplate?style=for-the-badge
 [issues-url]: https://github.com/jhyoung09/ITAM-Crawler/issues
